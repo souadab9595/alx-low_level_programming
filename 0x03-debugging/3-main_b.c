@@ -1,30 +1,19 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * main - tests the convert_day function
+ * Return: Always 0
+ */
 int main(void)
 {
-	int day = 29;
-	int month = 2;
-	int year = 2000;
+	int month, day, year;
+	int result;
 
-	if (is_valid_date(day, month, year))
-	{
-		printf("%02d/%02d/%d is a valid date\n", day, month, year);
-
-	int days_in_month = get_days_in_month(month, year);
-		printf("There are %d days in the month of %02d/%d\n", days_in_month, month, year);
-
-	int day_of_year = get_day_of_year(day, month, year);
-		printf("%02d/%02d/%d is day %d of the year\n", day, month, year, day_of_year);
-
-	int days_left_in_year = get_days_left_in_year(day, month, year);
-		printf("There are %d days left in the year\n", days_left_in_year);
-	}
-	else
-	{
-		printf("%02d/%02d/%d is an invalid date\n", day, month, year);
-	}
-
+	month = 2;
+	day = 29;
+	year = 2000;
+	result	= int convert_day(int month, int day, int year);
+	printf("%d/%d/%d is the %d day of the year\n", month, day, year, result);
 	return (0);
 }
-
